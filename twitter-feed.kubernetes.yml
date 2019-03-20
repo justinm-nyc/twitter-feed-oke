@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: twitter-feed-v2
   labels:
-    commit: 9a8fa77277c4a8c3c96d96d4b804e83c26ac6cc0
+    commit: 9c8695ac6df672cd9444ca06da4debe138f1c7d2
 spec:
   replicas: 2
   selector:
@@ -13,12 +13,12 @@ spec:
     metadata:
       labels:
         app: twitter-feed
-        commit: 9a8fa77277c4a8c3c96d96d4b804e83c26ac6cc0
+        commit: 9c8695ac6df672cd9444ca06da4debe138f1c7d2
         color: green
     spec:
       containers:
       - name: twitter-feed
-        image: wcr.io/derekoneil/twitter-feed:master-9a8fa77277c4a8c3c96d96d4b804e83c26ac6cc0
+        image: wcr.io/orasenatdpltdevopsnetw01/helloworldtest/helloworld:master-9c8695ac6df672cd9444ca06da4debe138f1c7d2
         imagePullPolicy: Always
         ports:
         - name: twitter-feed
@@ -44,7 +44,7 @@ metadata:
   name: twitter-feed
   labels:
     app: twitter-feed
-    commit: 9a8fa77277c4a8c3c96d96d4b804e83c26ac6cc0
+    commit: 9c8695ac6df672cd9444ca06da4debe138f1c7d2
 spec:
   ports:
   - port: 30000
