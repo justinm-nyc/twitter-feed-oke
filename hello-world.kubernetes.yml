@@ -1,27 +1,27 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: twitter-feed-v2
+  name: hello-world
   labels:
     commit: 9c8695ac6df672cd9444ca06da4debe138f1c7d2
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
-      app: twitter-feed
+      app: hello-world
   template:
     metadata:
       labels:
-        app: twitter-feed
+        app: hello-world
         commit: 9c8695ac6df672cd9444ca06da4debe138f1c7d2
         color: green
     spec:
       containers:
-      - name: twitter-feed
+      - name: hello-world
         image: wcr.io/orasenatdpltdevopsnetw01/helloworldtest/helloworld:master-9c8695ac6df672cd9444ca06da4debe138f1c7d2
         imagePullPolicy: Always
         ports:
-        - name: twitter-feed
+        - name: hello-world
           containerPort: 8080
           protocol: TCP
         volumeMounts:
@@ -41,16 +41,16 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: twitter-feed
+  name: hello-world
   labels:
-    app: twitter-feed
+    app: hello-world
     commit: 9c8695ac6df672cd9444ca06da4debe138f1c7d2
 spec:
   ports:
   - port: 30000
     targetPort: 8080
   selector:
-    app: twitter-feed
+    app: hello-world
     color: green
   type: ClusterIP
 ---
