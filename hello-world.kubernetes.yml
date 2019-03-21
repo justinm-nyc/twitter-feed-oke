@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: hello-world
   labels:
-    commit: f912fc351ecfd745ef399fd44bbfdc9ee5a7fe1f
+    commit: 9c8695ac6df672cd9444ca06da4debe138f1c7d2
 spec:
   replicas: 3
   selector:
@@ -13,12 +13,12 @@ spec:
     metadata:
       labels:
         app: hello-world
-        commit: f912fc351ecfd745ef399fd44bbfdc9ee5a7fe1f
+        commit: 9c8695ac6df672cd9444ca06da4debe138f1c7d2
         color: green
     spec:
       containers:
       - name: hello-world
-        image: iad.ocir.io/orasenatdpltdevopsnetw01/helloworldtest/helloworld:master-f912fc351ecfd745ef399fd44bbfdc9ee5a7fe1f
+        image: iad.ocir.io/orasenatdpltdevopsnetw01/helloworldtest/helloworld:master-9c8695ac6df672cd9444ca06da4debe138f1c7d2
         imagePullPolicy: Always
         ports:
         - name: hello-world
@@ -44,7 +44,7 @@ metadata:
   name: hello-world
   labels:
     app: hello-world
-    commit: f912fc351ecfd745ef399fd44bbfdc9ee5a7fe1f
+    commit: 9c8695ac6df672cd9444ca06da4debe138f1c7d2
 spec:
   ports:
   - port: 30000
